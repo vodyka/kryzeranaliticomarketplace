@@ -1,9 +1,11 @@
 // ==UserScript==
 // @name         Kryzer Clone Mercado Livre
 // @namespace    https://github.com/vodyka/kryzeranaliticomarketplace
-// @version      1.0.0
+// @version      1.0.1
 // @description  Clona anúncio público do Mercado Livre para uma conta autorizada no KryzerHub
+// @match        https://mercadolivre.com.br/*/up/MLBU*
 // @match        https://www.mercadolivre.com.br/*/up/MLBU*
+// @match        https://mercadolibre.com.br/*/up/MLBU*
 // @match        https://www.mercadolibre.com.br/*/up/MLBU*
 // @run-at       document-start
 // @grant        unsafeWindow
@@ -14,7 +16,7 @@
 // @grant        GM_openInTab
 // @grant        GM_registerMenuCommand
 // @connect      *
-// @require      https://raw.githubusercontent.com/vodyka/kryzeranaliticomarketplace/main/src/kryzer-mercadolivre-clone.js?v=1.0.0
+// @require      https://raw.githubusercontent.com/vodyka/kryzeranaliticomarketplace/main/src/kryzer-mercadolivre-clone.js?v=1.0.1
 // @updateURL    https://raw.githubusercontent.com/vodyka/kryzeranaliticomarketplace/main/kryzer-clone.user.js
 // @downloadURL  https://raw.githubusercontent.com/vodyka/kryzeranaliticomarketplace/main/kryzer-clone.user.js
 // ==/UserScript==
