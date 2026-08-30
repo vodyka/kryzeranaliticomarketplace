@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Kryzer Clone Mercado Livre
 // @namespace    https://github.com/vodyka/kryzeranaliticomarketplace
-// @version      1.0.1
+// @version      1.0.2
 // @description  Clona anúncio público do Mercado Livre para uma conta autorizada no KryzerHub
 // @match        https://mercadolivre.com.br/*/up/MLBU*
 // @match        https://www.mercadolivre.com.br/*/up/MLBU*
@@ -16,10 +16,25 @@
 // @grant        GM_openInTab
 // @grant        GM_registerMenuCommand
 // @connect      *
-// @require      https://raw.githubusercontent.com/vodyka/kryzeranaliticomarketplace/main/src/kryzer-mercadolivre-clone.js?v=1.0.1
+// @require      https://raw.githubusercontent.com/vodyka/kryzeranaliticomarketplace/main/src/kryzer-mercadolivre-clone.js?v=1.0.2
 // @updateURL    https://raw.githubusercontent.com/vodyka/kryzeranaliticomarketplace/main/kryzer-clone.user.js
 // @downloadURL  https://raw.githubusercontent.com/vodyka/kryzeranaliticomarketplace/main/kryzer-clone.user.js
 // ==/UserScript==
 
 // O clone usa somente um token Kryzer escopado/revogável no Tampermonkey.
 // Access token, refresh token e client secret do Mercado Livre permanecem no KryzerHub.
+
+// Mantém o botão de clone acima do botão "Analisar anúncio" do Kryzer Analítico.
+(() => {
+  let attempts = 0;
+  const timer = setInterval(() => {
+    attempts += 1;
+    const button = document.getElementById('kryzer-clone-button');
+    if (button) {
+      button.style.bottom = '82px';
+      clearInterval(timer);
+      return;
+    }
+    if (attempts >= 60) clearInterval(timer);
+  }, 500);
+})();
